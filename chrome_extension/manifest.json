@@ -1,0 +1,88 @@
+//{
+//  "manifest_version": 3,
+//  "name": "Terms and Conditions Analyzer",
+//  "description": "Analyze T&Cs and get recommendations.",
+//  "version": "1.0",
+//  "permissions": [
+//    "activeTab",
+//    "storage"
+//  ],
+//  "background": {
+//    "service_worker": "background.js"
+//  },
+//  "action": {
+//    "default_popup": "popup.html",
+//    "default_icon": {
+//      "16": "icons/icon16.png",
+//      "48": "icons/icon48.png",
+//      "128": "icons/icon128.png"
+//    }
+//  },
+//  "content_scripts": [
+//    {
+//      "matches": ["<all_urls>"],
+//      "js": ["content.js"]
+//    }
+//  ],
+//  "host_permissions": [
+//    "http://*/*",
+//    "https://*/*"
+//  ]
+//}
+
+
+
+
+//{
+//  "manifest_version": 3,
+//  "name": "URL Tracker",
+//  "version": "1.0",
+//  "description": "Collect and display visited URLs",
+//  "permissions": ["storage", "activeTab"],
+//  "action": {
+//    "default_popup": "index.html",
+//    "default_icon": {
+//      "16": "icons/icon16.png",
+//      "48": "icons/icon48.png",
+//      "128": "icons/icon128.png"
+//    }
+//  },
+//  "icons": {
+//    "16": "icons/icon16.png",
+//    "48": "icons/icon48.png",
+//    "128": "icons/icon128.png"
+//  },
+//  "background": {
+//    "service_worker": "background.js"
+//  }
+//}
+
+
+{
+  "manifest_version": 3,
+  "name": "URL Fetcher",
+  "version": "1.0",
+  "description": "Fetch the current tab's URL when clicked",
+  "permissions": [
+    "tabs",        // Permission to access tab information
+    "storage"      // Permission to store data locally
+  ],
+  "action": {
+    "default_popup": "popup.html",   // Optional: If you want a popup when the user clicks the extension
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
+

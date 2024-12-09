@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Analysis Results</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           padding: 20px;
+           background-color: #f9f9f9;
+       }
+       .progress-bar {
+           width: 100%;
+           background-color: #f3f3f3;
+           border-radius: 5px;
+           margin: 20px 0;
+           overflow: hidden;
+           position: relative;
+       }
+       .progress-bar-fill {
+           height: 20px;
+           width: 0%;
+           background-color: #4caf50;
+           text-align: center;
+           line-height: 20px;
+           color: white;
+           transition: width 0.3s;
+       }
+       #dynamic-text {
+           margin-top: 10px;
+           font-size: 1em;
+           color: #333;
+       }
+       .result-section {
+           background-color: white;
+           border: 1px solid #ddd;
+           border-radius: 5px;
+           margin-top: 20px;
+           padding: 15px;
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+       }
+       .section-title {
+           font-size: 1.2em;
+           font-weight: bold;
+           margin-bottom: 10px;
+       }
+       .result-content {
+           font-size: 1em;
+           color: #555;
+           line-height: 1.5;
+           white-space: pre-wrap;
+           word-wrap: break-word;
+       }
+   </style>
+</head>
+<body>
+   <h1>Analysis Results</h1>
+
+
+   <!-- Progress Bar -->
+   <div id="progress-container">
+       <div class="progress-bar">
+           <div class="progress-bar-fill" id="progress-bar-fill">0%</div>
+       </div>
+       <div id="dynamic-text">Starting analysis...</div>
+   </div>
+
+
+   <!-- Results Section -->
+   <div id="results-container" style="display: none;">
+       <h2>Analysis Complete</h2>
+   </div>
+
+
+   <script>
+    const progressFill = document.getElementById("progress-bar-fill");
+    const dynamicText = document.getElementById("dynamic-text");
+    const resultsContainer = document.getElementById("results-container");
+
+    let progress = 0;
+
+    const dynamicTexts = [
+        "Fetching URL...",
+        "Analyzing content...",
+        "Extracting insights...",
+        "Finalizing results..."
+    ];
+
+    function updateProgress() {
+        if (progress < 100) {
+            progress += 10;
+            progressFill.style.width = progress + "%";
+            progressFill.textContent = progress + "%";
+
+            const textIndex = Math.floor(progress / 25);
+            dynamicText.textContent = dynamicTexts[textIndex] || "Almost done...";
+        }
+    }
+
+    function checkStatus() {
+        fetch("/status")
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "complete") {
+                    document.getElementById("progress-container").style.display = "none";
+                    resultsContainer.style.display = "block";
+
+                    const results = data.results;
+                    results.forEach((result, index) => {
+                        const section = document.createElement("div");
+                        section.classList.add("result-section");
+
+                        const title = document.createElement("div");
+                        title.classList.add("section-title");
+                        title.textContent = `Result ${index + 1}`;
+                        section.appendChild(title);
+
+                        const content = document.createElement("div");
+                        content.classList.add("result-content");
+                        content.textContent = formatJsonToReadableText(result);
+                        section.appendChild(content);
+
+                        resultsContainer.appendChild(section);
+                    });
+
+                    clearInterval(statusInterval);
+                }
+            });
+    }
+
+    function formatJsonToReadableText(jsonObject) {
+        let readableText = "";
+        const formatObject = (obj, indent = "") => {
+            for (const key in obj) {
+                if (Object.hasOwn(obj, key)) {
+                    const value = obj[key];
+                    if (typeof value === "object" && value !== null) {
+                        readableText += `${indent}${key}:\n`;
+                        formatObject(value, indent + "  "); // Indent further for nested objects
+                    } else {
+                        readableText += `${indent}${key}: ${value}\n`;
+                    }
+                }
+            }
+        };
+        formatObject(jsonObject);
+        return readableText.trim();
+    }
+
+    const progressInterval = setInterval(updateProgress, 2000);
+    const statusInterval = setInterval(checkStatus, 2000);
+</script>
+
+</body>
+</html>
