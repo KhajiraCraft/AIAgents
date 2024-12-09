@@ -34,6 +34,7 @@ AIAgents is a web-based application designed to simplify and enhance the process
 
 ### Steps to Set Up and Run the Application
 ```bash
+```
 # Step 1: Clone the Repository
 git clone https://github.com/KhajiraCraft/AIAgents.git
 cd AIAgents
@@ -52,15 +53,15 @@ pip install -r requirements.txt
 # Step 4: Start the Flask Server
 python app.py
 
-## Example Request
-- **Endpoint**: `http://127.0.0.1:5000/analyze`
-- **Method**: POST
-- **Body (JSON)**:
-  ```json
-  {
-    "url": "https://example.com/terms"
-  }
-## Directory Structure
+# Example Request
+# Endpoint: http://127.0.0.1:5000/analyze
+# Method: POST
+# Body (JSON):
+{
+  "url": "https://example.com/terms"
+}
+
+# Directory Structure
 AIAgents/
 ├── backend/
 │   ├── app.py                # Main Flask application
@@ -73,32 +74,33 @@ AIAgents/
 ├── venv/                     # Virtual environment (optional)
 ├── README.md                 # Project documentation
 
-## Technology Stack
+# Technology Stack
+- Backend: Flask
+- AI Tools: LangChain, OpenAI GPT
+- Web Scraping: BeautifulSoup, Requests
+- LLM Models: ChatOpenai
 
-- **Backend**: Flask
-- **AI Tools**: LangChain, OpenAI GPT
-- **Web Scraping**: BeautifulSoup, Requests
-- **NLP Models**: Hugging Face, LexNLP
-## Contributing
+# Contributing
+1. Fork the repository.
 
-1. **Fork the repository.**
+2. Create a feature branch:
+git checkout -b feature-name
 
-2. **Create a feature branch:**
-   ```bash
-   git checkout -b feature-name
-3. **Commit your changes:**
+3. Commit your changes:
 git commit -m "Add feature-name"
-4.  **Push to the branch:**
+
+4. Push to the branch:
 git push origin feature-name
-5. **Open a pull request.**
 
-This content fits well under the **Contributing** section of your `README.md`. Let me know if there’s anything else you’d like! 😊
-## License
+5. Open a pull request.
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-## Acknowledgments
+# License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
+# Acknowledgments
 - OpenAI for their powerful AI tools.
 - Flask for providing a lightweight web framework.
 - LangChain for simplifying AI workflows.
 - All contributors who made this project possible.
+```
+
