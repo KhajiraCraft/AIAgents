@@ -1,5 +1,9 @@
 # AIAgents: Terms and Conditions Analyzer
 
+# Members
+Christopher Khajira
+Esther Ochieng
+
 ## Overview
 
 AIAgents is a web-based application designed to simplify and enhance the process of analyzing Terms and Conditions (T&Cs) documents. The application scrapes T&Cs from a given website, summarizes key points, identifies risks, and provides actionable recommendations, all in an intuitive and user-friendly manner. It uses Flask as the backend framework and integrates with AI models for analysis.
