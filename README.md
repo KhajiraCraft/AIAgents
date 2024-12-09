@@ -35,33 +35,33 @@ AIAgents is a web-based application designed to simplify and enhance the process
 ### Steps to Set Up and Run the Application
 ```bash
 ```
-# Step 1: Clone the Repository
+## Step 1: Clone the Repository
 git clone https://github.com/KhajiraCraft/AIAgents.git
 cd AIAgents
 
-# Step 2: Set Up Virtual Environment (Optional)
+## Step 2: Set Up Virtual Environment (Optional)
 python -m venv venv
-# Activate the environment
-# On Windows:
+## Activate the environment
+### On Windows:
 venv\Scripts\activate
-# On macOS/Linux:
+### On macOS/Linux:
 source venv/bin/activate
 
-# Step 3: Install Dependencies
+## Step 3: Install Dependencies
 pip install -r requirements.txt
 
-# Step 4: Start the Flask Server
+## Step 4: Start the Flask Server
 python app.py
 
-# Example Request
-# Endpoint: http://127.0.0.1:5000/analyze
-# Method: POST
-# Body (JSON):
+## Example Request
+### Endpoint: http://127.0.0.1:5000/analyze
+### Method: POST
+### Body (JSON):
 {
   "url": "https://example.com/terms"
 }
 
-# Directory Structure
+## Directory Structure
 AIAgents/
 ├── backend/
 │   ├── app.py                # Main Flask application
@@ -74,13 +74,13 @@ AIAgents/
 ├── venv/                     # Virtual environment (optional)
 ├── README.md                 # Project documentation
 
-# Technology Stack
+## Technology Stack
 - Backend: Flask
 - AI Tools: LangChain, OpenAI GPT
 - Web Scraping: BeautifulSoup, Requests
 - LLM Models: ChatOpenai
 
-# Contributing
+## Contributing
 1. Fork the repository.
 
 2. Create a feature branch:
@@ -94,10 +94,10 @@ git push origin feature-name
 
 5. Open a pull request.
 
-# License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-# Acknowledgments
+## Acknowledgments
 - OpenAI for their powerful AI tools.
 - Flask for providing a lightweight web framework.
 - LangChain for simplifying AI workflows.
