@@ -51,3 +51,54 @@ pip install -r requirements.txt
 
 # Step 4: Start the Flask Server
 python app.py
+
+## Example Request
+- **Endpoint**: `http://127.0.0.1:5000/analyze`
+- **Method**: POST
+- **Body (JSON)**:
+  ```json
+  {
+    "url": "https://example.com/terms"
+  }
+## Directory Structure
+AIAgents/
+├── backend/
+│   ├── app.py                # Main Flask application
+│   ├── chains/
+│   │   ├── custom_chains.py  # Custom chains for AI tasks
+│   │   └── ...
+│   └── requirements.txt      # Dependencies
+├── chrome_extension/
+│   └── ...                   # Code for Chrome extension (if applicable)
+├── venv/                     # Virtual environment (optional)
+├── README.md                 # Project documentation
+
+## Technology Stack
+
+- **Backend**: Flask
+- **AI Tools**: LangChain, OpenAI GPT
+- **Web Scraping**: BeautifulSoup, Requests
+- **NLP Models**: Hugging Face, LexNLP
+## Contributing
+
+1. **Fork the repository.**
+
+2. **Create a feature branch:**
+   ```bash
+   git checkout -b feature-name
+3. **Commit your changes:**
+git commit -m "Add feature-name"
+4.  **Push to the branch:**
+git push origin feature-name
+5. **Open a pull request.**
+
+This content fits well under the **Contributing** section of your `README.md`. Let me know if there’s anything else you’d like! 😊
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+## Acknowledgments
+
+- OpenAI for their powerful AI tools.
+- Flask for providing a lightweight web framework.
+- LangChain for simplifying AI workflows.
+- All contributors who made this project possible.
