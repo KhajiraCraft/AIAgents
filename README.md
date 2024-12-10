@@ -30,6 +30,69 @@ AIAgents is a web-based application designed to simplify and enhance the process
 
 ---
 
+## Technologies,Frameworks and Concepts
+
+### ReAct Reasoning
+
+**Description**:  
+ReAct (Reasoning + Acting) is a strategy combining reasoning and action to handle complex decision-making tasks in AI. This methodology interweaves reasoning steps with decision-making actions, allowing the AI to think and act iteratively.
+
+**Application in Project**:  
+- The AI first reasons about the structure and content of the terms and conditions.  
+- It then takes actions, such as extracting key clauses or highlighting potential red flags.  
+- This iterative process ensures that the summaries generated are accurate, contextually relevant, and actionable for the user.  
+
+---
+
+### Self-Propagation Mechanism
+
+**Description**:  
+Self-propagation refers to a mechanism where AI systems iteratively improve their understanding or output by using the results of one step as input for subsequent steps.
+
+**Implementation**:  
+- The summarization system breaks down the document into smaller sections and generates preliminary summaries for each part.  
+- These summaries are then aggregated and refined in subsequent passes to ensure consistency and completeness.  
+- This iterative refinement leverages feedback loops, enabling the AI to learn from its own outputs and enhance the quality of the final summary.  
+
+### Backend: Flask
+
+**Description**:  
+Flask is a lightweight and flexible Python web framework used to develop web applications. It provides essential tools and libraries to build a functional backend.
+
+**Role**:  
+In this project, Flask serves as the backend server, handling API requests, managing the interaction between the front end and the AI models, and orchestrating the overall application logic.
+
+---
+
+### AI Tools: LangChain, OpenAI GPT
+
+**LangChain**:  
+A framework for building applications powered by large language models (LLMs). It allows seamless integration of AI tools, managing prompt engineering, and chaining multiple reasoning tasks for complex workflows.
+
+**OpenAI GPT**:  
+The core AI engine providing natural language understanding and generation capabilities. Specifically, the project uses the GPT model for processing and summarizing terms and conditions.
+
+---
+
+### Web Scraping: BeautifulSoup, Requests
+
+**BeautifulSoup**:  
+A Python library used to parse HTML and XML documents. It extracts relevant data from web pages for analysis or processing.
+
+**Requests**:  
+A Python library that simplifies making HTTP requests to fetch data from web pages. It is used to retrieve the HTML content that BeautifulSoup processes.
+
+---
+
+### LLM Models: ChatOpenAI
+
+**Description**:  
+ChatOpenAI is an implementation of the GPT family designed for conversational AI. It enables context-aware interactions and generates high-quality text responses.
+
+**Role**:  
+The ChatOpenAI model is utilized for summarizing legal documents, applying ReAct reasoning, and providing explanations or feedback to users.
+
+
 ## Installation and Usage
 
 ### Prerequisites
@@ -78,11 +141,6 @@ AIAgents/
 ├── venv/                     # Virtual environment (optional)
 ├── README.md                 # Project documentation
 
-## Technology Stack
-- Backend: Flask
-- AI Tools: LangChain, OpenAI GPT
-- Web Scraping: BeautifulSoup, Requests
-- LLM Models: ChatOpenai
 
 ## Contributing
 1. Fork the repository.
