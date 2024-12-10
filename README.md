@@ -93,7 +93,7 @@ ChatOpenAI is an implementation of the GPT family designed for conversational AI
 The ChatOpenAI model is utilized for summarizing legal documents, applying ReAct reasoning, and providing explanations or feedback to users.
 
 ### Flow Diagram
-![App Flow Diagram](Flow Diagram.png "Flow Diagram of App Architecture")
+![App Flow Diagram](flow_diagram.png "Flow Diagram of App Architecture")
 
 
 
