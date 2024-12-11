@@ -104,8 +104,6 @@ The ChatOpenAI model is utilized for summarizing legal documents, applying ReAct
 - Pip package manager
 
 ### Steps to Set Up and Run the Application
-```bash
-```
 ## Step 1: Clone the Repository
 git clone https://github.com/KhajiraCraft/AIAgents.git
 cd AIAgents
@@ -131,6 +129,13 @@ python app.py
 {
   "url": "https://example.com/terms"
 }
+## Step 5: Chrome Extension
+- Open Chrome.
+- Go to chrome://extensions/ by typing it into the address bar.
+- Toggle the Developer mode switch in the top-right corner to enable developer tools for extensions.
+- Click the "Load unpacked" button on the top left.
+- Navigate to the folder containing your extension files and select it.
+-The extension will be loaded into Chrome, and you'll see it listed on the Extensions page.
 
 ## Directory Structure
 AIAgents/
